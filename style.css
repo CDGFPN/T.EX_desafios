@@ -1,0 +1,239 @@
+html{
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;    
+}
+
+body{
+    padding: 1.5em;
+    background-color: #60a9ff;
+    /* background-color: #8BC6EC;
+    background-image: linear-gradient(135deg, #8BC6EC 0%, #9599E2 100%);
+    background-size: cover; */
+}
+
+
+.headerImgs{
+    display: flex;
+    justify-content: space-between;
+    padding: 30px;
+}
+
+.div-book-image{
+    width: 200px;
+    height: 200px;
+    padding-right: 1.5em;
+}
+
+.container-logo-image-2{
+    display: flex;
+}
+
+.logo-image-2{
+    width: 150px;
+    height: 150px;
+    margin: 0 auto;
+}
+
+.login-area div:nth-child(2){
+    margin-top: 0.5em;
+}
+
+
+.login-area input{
+    width: 200px;
+    height: 15px;
+    border-radius: 1em;
+}
+
+.login-button-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.login-button{
+    padding: 0.5em;
+    margin: 0;
+    margin-top: 0.5em;
+    border-radius: 1em;
+}
+
+.button-paragraph{
+    font-size: 0.8em;
+}
+
+.button-paragraph a{
+    text-decoration: none;
+}
+
+.button-paragraph a:hover{
+    text-decoration: underline;
+}
+
+
+.logo-image{
+   width: 250px;
+   margin-bottom: 2.5em;
+
+}
+
+/* NAVEGAÇÃO */
+.nav{
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.5em;
+    padding: 0 1.5em;
+}
+
+
+.nav ul{
+    list-style: none;
+    flex:1;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: space-evenly;
+    max-width: 50%;
+}
+
+.nav ul li{
+    padding: 0;
+    margin: 0;
+
+}
+
+.nav ul a, .nav a{
+    text-decoration: none;
+    color: white;
+}
+
+h1{
+    padding: 1em;
+    text-align: center;
+}
+
+main{
+    margin: 0 1em 0 1em;
+    padding: 2em;
+}
+
+.container-cursos{
+    display: flex;
+    width: 1100px;
+    height: 400px;
+    margin: 0 auto;
+    margin-top: 2em;
+    padding: 3em;
+    padding-top: 5em;
+    gap: 0.7em;
+}
+
+.course-membership{
+    flex: 1;
+    border: 2px solid black;
+    text-align: center;
+    background-color: #e1f1ff;
+    border-radius: 20px;
+    padding: 25px 25px;
+}
+
+.course-membership h3{
+    color: #888;
+    margin-bottom: 0;
+}
+
+.membershipDescription{
+    display: flex;
+    flex-direction: column;
+    padding: 4px;
+    margin-top: 0;
+}
+
+.membershipDescription span:nth-child(1){
+    font-size: 1.8rem;
+}
+
+.membershipDescription span{
+    font-weight: 700;
+}
+
+.course-membership:nth-child(2){
+    border: 4px solid black;
+    border-top: none;
+    border-radius: 0 0 20px 20px;
+    position: relative;
+}
+
+.emphasis-container{
+    display: flex;
+    flex: 1;
+    justify-content: center;
+}
+
+.emphasis-absolute{
+    position: absolute;
+    background-color: red;
+    border: 4px solid black;
+    border-bottom: 1px solid black;
+    border-radius: 25px 25px 0 0 ;
+    width: 100%;
+    padding: 10px 0;
+    top: -65px;
+    right: -4px;
+}
+
+.emphasis-absolute p{
+    margin:0;
+    padding:0;
+    font-weight: 700;
+}
+
+.empty-span{
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 0 auto 20px;
+}
+
+.container-empty-span .empty-span:last-of-type{
+    height: 3px;
+    background-color: red;
+}
+
+.membership-button{
+    padding: 10px;
+    margin-top: 2em;
+    border-radius: 0.5rem;
+    border: 2px solid #60a9ff;
+    background-color: #e1f1ff;
+    font-size: 1em;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #60a9ff;
+    font-weight: 700;
+}
+
+.membership-button:hover{
+    background-color: #60a9ff;
+    color: white;
+}
+
+.course-membership:nth-child(2) .membership-button{
+    color: white;
+    background-color: #60a9ff;
+}
+
+.course-membership:nth-child(2) .membership-button:hover{
+    background-color: #26a0f0;
+    border-color: #26a0f0;
+}
+
+
+
+
+@media (max-width: 800px){
+    .nav, .nav ul{
+        flex-direction: column;
+        align-items: center;
+    }
+}
