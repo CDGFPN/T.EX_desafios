@@ -5,12 +5,13 @@ html{
 
 body{
     padding: 1.5em;
-    background-color: #60a9ff;
-    /* background-color: #8BC6EC;
-    background-image: linear-gradient(135deg, #8BC6EC 0%, #9599E2 100%);
-    background-size: cover; */
+    background: rgb(238,174,202);
+    background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
 }
 
+header{
+    border-bottom: 3px solid #60a9ff;
+}
 
 .headerImgs{
     display: flex;
@@ -82,7 +83,9 @@ body{
     display: flex;
     justify-content: space-between;
     font-size: 1.5em;
-    padding: 0 1.5em;
+    padding: 1.2em;
+    border: 1px solid black;
+    box-shadow: 10px 5px 10px black;
 }
 
 
@@ -94,6 +97,7 @@ body{
     display: flex;
     justify-content: space-evenly;
     max-width: 50%;
+    
 }
 
 .nav ul li{
@@ -172,7 +176,7 @@ main{
 
 .emphasis-absolute{
     position: absolute;
-    background-color: red;
+    background-color: rgb(87, 160, 244);
     border: 4px solid black;
     border-bottom: 1px solid black;
     border-radius: 25px 25px 0 0 ;
@@ -228,8 +232,92 @@ main{
     border-color: #26a0f0;
 }
 
+.container-footer{
+    display: flex;
+    padding: 2em;
+    margin: 1.5em;
+}
 
+.container-footer div{
+    width: 300px;
+    height: 300px;
+    flex: 1;
+    padding: 1.5em;
+    border: 2px solid black;
+    background-color: red;
+}
 
+.container-footer div:nth-child(2){
+    height: 350px;
+    flex: 1;
+}
+
+footer ol,
+footer ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 1rem;
+}
+
+footer li {
+    display: grid;
+    grid-template-columns: 0 1fr;
+    gap: 1.75em;
+    align-items: start;
+    font-size: 1rem;
+    line-height: 1.25;
+  }
+
+  footer ul li::before {
+  content: attr(data-icon);
+  /* Make slightly larger than the li font-size
+  but smaller than the li gap */
+  font-size: 1.1em;
+}
+
+.contact-text{
+    resize: none;
+    width: 90%;
+    height: 20%;
+}
+
+.contact-button-container{
+    display:flex;
+    flex: 1;
+    justify-content: right;
+    margin: 0 2em;
+}
+
+.contact-button{
+    
+}
+
+.span-input{
+    display: flex;
+}
+
+.span-input label{
+    margin-right: 0.5em;
+}
+
+.social-media-grid{
+    display:flex;
+    gap: 0.5em;
+}
+
+.social-media-logo{
+    width: 60px;
+    height: 60px;
+    padding: 0.2em;
+    border: 2px solid black;
+    border-radius: 50%;
+}
+
+.social-media-logo img{
+    margin: 5px;
+}
 
 @media (max-width: 800px){
     .nav, .nav ul{
