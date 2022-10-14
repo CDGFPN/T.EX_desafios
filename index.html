@@ -11,7 +11,7 @@
 </head>
 
 <body>
-    <header>
+    <header  class="sticky">
         <div class="headerImgs">
             <img class="logo-image"
                 src="images/picturetopeople.org-923a5c6773e0be994c0a9c81d30a5d99a694f51434723893d8.png" alt="">
@@ -35,18 +35,17 @@
                 </form>
             </div>
         </div>
-        <nav class="nav">
-            <a href="#">Home</a>
-            <ul>
-                <li><a href="#">Sobre nós</a> </li>
-                <li><a href="#">Cursos</a> </li>
-                <li><a href="#">Contato</a> </li>
-            </ul>
-            <a href="#">Sign up</a>
-        </nav>
     </header>
     <main>
-
+            <nav class="nav">
+                <a href="#"><img class="logo-image-2" src="images/cursosja-high-resolution-logo-transparent-background (1).png" alt=""></a>
+                <ul>
+                    <li><a href="#">Sobre nós</a> </li>
+                    <li><a href="#">Cursos</a> </li>
+                    <li><a href="#contact">Contato</a> </li>
+                </ul>
+                <a href="#">Sign up</a>
+            </nav>
         <h1>Cursos Já Tecnologia</h1>
         <h2>Conheça nossos planos</h2>
 
@@ -100,13 +99,90 @@
                     <a href="#" class="membership-button">Assine agora!</a>
                 </p>
             </div>
-
+        </div>
+        <h2>Cursos disponíveis</h2>
+        <div class="available-courses">
+            <ul class="course-grid">
+                <li class="course-flex-content">
+                    <div>
+                    <span class="grid-course-title">Jogos Digitais</span>
+                    <span class="grid-course-description">
+                        Design de jogos, desenvolvimento & VR/AR
+                    </span>
+                    <span class="grid-course-duration">Duração: 2 anos</span>
+                    </div>
+                    <div>
+                    <p class="grid-course-modality">
+                        <a href="#">Presencial <span>&Gt;</span></a>
+                        <a href="#">Online <span>&Gt;</span></a>
+                    </p>
+                    </div>
+                </li>
+                <li>
+                    <span class="grid-course-title">DevOps</span>
+                    <span class="grid-course-description">
+                        Processos e desenvolvimento automatizados e ágeis 
+                        
+                    </span>
+                    <span class="grid-course-duration">Duração: 6 semanas</span>
+                    <p class="grid-course-modality">
+                        <a href="#">Presencial <span>&Gt;</span></a>
+                        <a href="#">Online <span>&Gt;</span></a>
+                    </p>
+                    
+                </li>
+                <li>
+                    <span class="grid-course-title">Sistemas para Internet</span>
+                    <span class="grid-course-description">
+                        Full stack, E-Commerce & transformação digital
+                    </span>
+                    <span class="grid-course-duration">Duração: 2 anos</span>
+                    <p class="grid-course-modality">
+                        <a href="#">Presencial <span>&Gt;</span></a>
+                        <a href="#">Online <span>&Gt;</span></a>
+                    </p>
+                </li>
+                <li>
+                    <span class="grid-course-title">Banco de Dados</span>
+                    <span class="grid-course-description">
+                        Data sciene, big data & business intelligence
+                    </span>
+                    <span class="grid-course-duration">Duração: 2 anos</span>
+                    <p class="grid-course-modality">
+                        <a href="#">Presencial <span>&Gt;</span></a>
+                        <a href="#">Online <span>&Gt;</span></a>
+                    </p>
+                </li>
+                <li>
+                    <span class="grid-course-title">UX/UI Design</span>
+                    <span class="grid-course-description">
+                        Elabore designs com foco na experiência do usuário e aprenda a criar interfaces interativas, funcionais e criativas
+                    </span>
+                    <span class="grid-course-duration">Duração: 16 semanas</span>
+                    <p class="grid-course-modality">
+                        <a href="#">Presencial <span>&Gt;</span></a>
+                        <a href="#">Online <span>&Gt;</span></a>
+                    </p>
+                    
+                </li>
+                <li>
+                    <span class="grid-course-title">Full Stack Development</span>
+                    <span class="grid-course-description">
+                        Domine desenvolvimento front-end e back-end com as tecnologias mais recentes do mercado
+                    </span> 
+                    <span class="grid-course-duration">Duração: 6 meses</span>
+                    <ul class="grid-course-modality">
+                        <li><a href="#">Presencial <span>&Gt;</span></a></li>
+                        <li><a href="#">Online <span>&Gt;</span></a></li>
+                    </ul>
+                </li>
+            </ul>
         </div>
     </main>
 
     <footer>
         <div class="container-footer">
-            <div>
+            <div class="about">
                 <h3>Sobre</h3>
                 <ul>
                     <li data-icon="📍">São Cristóvão, 8341 - Araxá, MG <br>69965-954</span></li>
@@ -115,12 +191,12 @@
                 </ul>
                 <span>
             </div>
-            <div>
+            <div id="contact">
                 <h3>Contato</h3>
                 <span>Nos encaminhe uma mensagem e retornaremos assim que possível!</span>
                 <span class="empty-span"></span>
                 <span>
-                    <form action="" method="post">
+                    <form class="contact-form" action="" method="post">
                         <span class="span-input">
                             <label for="email">Email:</label>
                             <input type="email" name="email" id="emailContato" required>
@@ -137,26 +213,36 @@
                             </select>
                         </span>
                         <span class="empty-span"></span>
-                        <label for="contact-text">Elabore brevemente o motivo de seu contato</label>
-                        <textarea class="contact-text" name="contact-text" id="" rows="4" minlength="10"
-                            maxlength="100"></textarea>
+                        <span class="span-input">
+                            <label for="contact-text">Elabore brevemente o motivo de seu contato</label>
+                            <textarea class="contact-text" name="contact-text" id="" rows="4" minlength="10"
+                                maxlength="100"></textarea>
+                        </span>
                         <span class="contact-button-container">
                             <button class="contact-button">Enviar</button>
                         </span>
                     </form>
                 </span>
             </div>
-            <div>
+            <div class="social-media">
                 <h3>Siga nossas redes sociais</h3>
-                <span class="social-media-grid">
-                    <span class="social-media-logo"><img src="./images/social-media/facebook.svg" alt=""></span>
-                    <span class="social-media-logo"><img src="./images/social-media/instagram.svg" alt=""></span>
-                    <span class="social-media-logo"><img src="./images/social-media/linkedin.svg" alt=""></span>
-                    <span class="social-media-logo"><img src="./images/social-media/twitter.svg" alt=""></span>
+                <span class="social-media-flex">
+                    <span class="social-media-logo"><a class="social-media-button" href="#"><img
+                                src="./images/social-media/facebook.svg" alt=""></a></span>
+
+                    <span class="social-media-logo"><a class="social-media-button" href="#"><img
+                                src="./images/social-media/instagram.svg" alt=""></span>
+                    </a>
+                    <span class="social-media-logo"><a class="social-media-button" href="#"><img
+                                src="./images/social-media/linkedin.svg" alt=""></span>
+                    </a>
+                    <span class="social-media-logo"><a class="social-media-button" href="#"><img
+                                src="./images/social-media/twitter.svg" alt=""></span>
+                    </a>
                 </span>
             </div>
         </div>
-        <p>Todos direitos reservados &copy</p>
+        <p>Todos direitos reservados &copy 2022</p>
     </footer>
 </body>
 

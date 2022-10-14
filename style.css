@@ -1,16 +1,13 @@
 html{
     box-sizing: border-box;
     font-family: 'Open Sans', sans-serif;    
+    scroll-behavior: smooth;
 }
 
 body{
-    padding: 1.5em;
     background: rgb(238,174,202);
     background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
-}
-
-header{
-    border-bottom: 3px solid #60a9ff;
+    margin: 0;
 }
 
 .headerImgs{
@@ -32,7 +29,6 @@ header{
 .logo-image-2{
     width: 150px;
     height: 150px;
-    margin: 0 auto;
 }
 
 .login-area div:nth-child(2){
@@ -43,7 +39,11 @@ header{
 .login-area input{
     width: 200px;
     height: 15px;
-    border-radius: 1em;
+    border-radius: 0.5rem;
+}
+
+.login-area input:focus{
+    box-shadow: 0px 1px 10px rgb(234, 146, 184);
 }
 
 .login-button-container{
@@ -56,7 +56,7 @@ header{
     padding: 0.5em;
     margin: 0;
     margin-top: 0.5em;
-    border-radius: 1em;
+    border-radius: 0.9rem;
 }
 
 .button-paragraph{
@@ -83,11 +83,22 @@ header{
     display: flex;
     justify-content: space-between;
     font-size: 1.5em;
-    padding: 1.2em;
+    padding: 0 1.2em;
     border: 1px solid black;
-    box-shadow: 10px 5px 10px black;
+    box-shadow: 10px 5px 5px black;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1900;
+    background: rgb(238,174,202);
+    background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
 }
 
+.logo-image-2{
+    width: 100px;
+    height: 52px;
+    padding-top: 0.2em;
+}
 
 .nav ul{
     list-style: none;
@@ -116,9 +127,14 @@ h1{
     text-align: center;
 }
 
+h2{
+    padding-left: 2em;
+}
+
 main{
-    margin: 0 1em 0 1em;
-    padding: 2em;
+    margin: 0;
+    padding: 0;
+    padding-top: 0; 
 }
 
 .container-cursos{
@@ -134,7 +150,7 @@ main{
 
 .course-membership{
     flex: 1;
-    border: 2px solid black;
+    border: 2px solid #888;
     text-align: center;
     background-color: #e1f1ff;
     border-radius: 20px;
@@ -162,7 +178,7 @@ main{
 }
 
 .course-membership:nth-child(2){
-    border: 4px solid black;
+    border: 2px solid #888;
     border-top: none;
     border-radius: 0 0 20px 20px;
     position: relative;
@@ -176,14 +192,14 @@ main{
 
 .emphasis-absolute{
     position: absolute;
-    background-color: rgb(87, 160, 244);
-    border: 4px solid black;
+    background-color: rgb(116, 175, 242);
+    border: 2px solid #888;
     border-bottom: 1px solid black;
     border-radius: 25px 25px 0 0 ;
     width: 100%;
     padding: 10px 0;
     top: -65px;
-    right: -4px;
+    right: -2px;
 }
 
 .emphasis-absolute p{
@@ -201,7 +217,7 @@ main{
 
 .container-empty-span .empty-span:last-of-type{
     height: 3px;
-    background-color: red;
+    background-color: #888;
 }
 
 .membership-button{
@@ -215,16 +231,19 @@ main{
     text-decoration: none;
     color: #60a9ff;
     font-weight: 700;
+    transition-property: background-color;
+    transition-duration: 0.2s;
+    
 }
 
 .membership-button:hover{
-    background-color: #60a9ff;
+    background-color: rgb(116, 175, 242);
     color: white;
 }
 
 .course-membership:nth-child(2) .membership-button{
     color: white;
-    background-color: #60a9ff;
+    background-color: rgb(116, 175, 242);
 }
 
 .course-membership:nth-child(2) .membership-button:hover{
@@ -232,10 +251,105 @@ main{
     border-color: #26a0f0;
 }
 
+.available-courses{
+    display: flex;
+    flex: 1;
+    height: 600px;
+    margin: 0 3em;
+    justify-content: center;
+}
+
+.course-grid{
+    display: grid;
+    grid-template-columns: 300px 300px 300px;
+    margin: 2em;
+    gap: 0.5em; 
+    list-style: none;
+    grid-auto-rows: 1fr;
+}
+
+.course-grid > *{
+    border: 2px solid #888;
+    text-align: right;
+    background-color: #e1f1ff;
+    border-radius: 20px;
+    padding: 1.2em 0.8em;
+}
+
+.course-grid li{
+    transition-property: background-color;
+    transition-duration: 0.2s;
+    background-size: 200% auto;
+}
+
+.course-grid li:hover, .course-grid li:hover *{
+    background: rgba(110,167,233,1);
+    background-position: right center;
+    color: #fff;
+}
+
+.grid-course-title{
+    display:block;
+    text-transform: uppercase;
+    margin-bottom: 0.5em;
+}
+
+.grid-course-description{
+    display:block;
+    text-align: left;
+    font-size: 0.7em;
+}
+
+.grid-course-duration{
+    display: block;
+    text-align: left;
+    font-size: 0.6em;
+    margin-top: 1em;
+}
+
+.grid-course-modality{
+    list-style: none;
+    padding: 0;
+    border-bottom: 2px solid #888;
+    border-top: 2px solid #888;
+    color: black;
+    text-align: left;
+    transition-property: background-color;
+    transition-duration: 0.2s;
+}
+
+.grid-course-modality li a{
+    text-decoration: none;
+    color: black;
+}
+
+.grid-course-modality a:nth-child(2){
+    border-top: none;
+}
+
+.grid-course-modality a{
+    transition: 0.5s;
+    background-size: 200% auto;
+    
+}
+
+
 .container-footer{
     display: flex;
-    padding: 2em;
-    margin: 1.5em;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background: rgb(238,199,216);
+    background: radial-gradient(circle, rgba(238,199,216,1) 0%, rgba(179,204,233,1) 78%);
+    color: black;
+}
+
+.container-footer h3{
+    margin-bottom: 1.5em;
+}
+
+.container-footer div:nth-child(3) h3{
+    text-align: center;
 }
 
 .container-footer div{
@@ -243,13 +357,13 @@ main{
     height: 300px;
     flex: 1;
     padding: 1.5em;
-    border: 2px solid black;
-    background-color: red;
+
 }
 
 .container-footer div:nth-child(2){
     height: 350px;
     flex: 1;
+    padding-left: 0;
 }
 
 footer ol,
@@ -275,12 +389,27 @@ footer li {
   /* Make slightly larger than the li font-size
   but smaller than the li gap */
   font-size: 1.1em;
+  text-shadow: 2px 3px rgb(55, 54, 54);;
+}
+
+footer p{
+    text-align: right;
+    padding-right: 1.5em;
 }
 
 .contact-text{
     resize: none;
     width: 90%;
     height: 20%;
+}
+
+input, textarea, select{
+    transition-property: box-shadow;
+    transition-duration: 0.3s;
+}
+
+input:focus, textarea:focus, select:focus{
+    box-shadow: 0px 1px 10px rgb(68, 148, 238);
 }
 
 .contact-button-container{
@@ -290,34 +419,60 @@ footer li {
     margin: 0 2em;
 }
 
-.contact-button{
-    
-}
-
 .span-input{
     display: flex;
 }
 
-.span-input label{
-    margin-right: 0.5em;
+.span-input:nth-of-type(5){
+    display: block;
 }
 
-.social-media-grid{
+.span-input label{
+    margin-right: 0.5em;
+    margin-bottom: 0.2em;
+}
+
+.span-input label + *{
+    border-radius: 0.5em;
+}
+
+/* REDES SOCIAIS FOOTER */
+.social-media-flex{
     display:flex;
-    gap: 0.5em;
+    justify-content: center;
+    gap: 0.2em;
 }
 
 .social-media-logo{
-    width: 60px;
-    height: 60px;
-    padding: 0.2em;
+    width: 40px;
+    height: 40px;
     border: 2px solid black;
     border-radius: 50%;
+    transition-property: background-color;
+    transition-duration: 0.2s;
 }
 
 .social-media-logo img{
-    margin: 5px;
+    width: 30px;
+    height: 30px;
+    padding: 0.3rem;
 }
+
+.social-media-logo:hover{
+    background-color: rgb(155, 197, 245);
+}
+
+.containerteste{
+    display: flex;
+}
+
+.containerteste div{
+    width: 200px;
+    height: 200px;
+    border: 1px solid black;
+    background-color: blue;
+}
+
 
 @media (max-width: 800px){
     .nav, .nav ul{
@@ -325,3 +480,25 @@ footer li {
         align-items: center;
     }
 }
+
+         
+.btn-grad {
+    background-image: linear-gradient(to right, #ff6e7f 0%, #bfe9ff  51%, #ff6e7f  100%);
+    margin: 10px;
+    padding: 15px 45px;
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: white;            
+    box-shadow: 0 0 20px #eee;
+    border-radius: 10px;
+    display: block;
+  }
+
+  .btn-grad:hover {
+    background-position: right center; /* change the direction of the change here */
+    color: #fff;
+    text-decoration: none;
+  }
+ 
