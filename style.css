@@ -36,7 +36,6 @@ body{
     margin-top: 0.5em;
 }
 
-
 .login-area input{
     width: 200px;
     height: 15px;
@@ -64,8 +63,10 @@ body{
     font-size: 0.8em;
 }
 
-.button-paragraph a{
+.button-paragraph a, .login-area label{
     text-decoration: none;
+    color:white;
+    text-shadow: 0 0 30px rgb(255 255 255 / 50%), 0 0 7px black;
 }
 
 .button-paragraph a:hover{
@@ -90,6 +91,8 @@ body{
     align-items: center;
     position: sticky;
     top: 0;
+    right: 0;
+    left: 0;
     z-index: 1900;
     background: rgb(238,174,202);
     background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
@@ -163,7 +166,7 @@ main{
 .container-grid-membership, .available-courses{
     width: 80%;
     margin: 0 auto;
-    padding: 0 3em;
+    padding: 0;
 }
 
 .course-membership{
@@ -171,7 +174,7 @@ main{
     text-align: center;
     background-color: #e1f1ff;
     border-radius: 20px;
-    padding: 10px 10px;
+    padding: 1em;
     grid-column: span 4 / auto;
     width: 90%;
     height: 330px;
@@ -308,7 +311,7 @@ main{
     text-align: right;
     background-color: #e1f1ff;
     border-radius: 20px;
-    padding: 1.2em 0.8em;
+    padding: 1em;
     transition: background-color 0.2s ease;
 }
 
@@ -343,7 +346,6 @@ main{
     list-style: none;
     padding: 0;
     margin-bottom: 1em;
-    text-align: left;
 }
 
 .grid-course-modality ul li, .grid-course-modality ul li > *{
@@ -380,13 +382,16 @@ main{
 }
 
 .container-footer{
-    display: flex;
+    display: grid;
     width: 100%;
+    grid-template-columns: 1fr 1fr 1fr;
     margin: 0;
     padding: 0;
     background: rgb(238,199,216);
     background: radial-gradient(circle, rgba(238,199,216,1) 0%, rgba(179,204,233,1) 78%);
     color: black;
+    justify-items: center;
+    padding-bottom: 2em;
 }
 
 .container-footer h3{
@@ -398,21 +403,10 @@ main{
 }
 
 .container-footer div{
-    width: 300px;
-    height: 300px;
-    flex: 1;
-    padding: 1.5em;
-
+    padding: 1.5em; 
 }
 
-.container-footer div:nth-child(2){
-    height: 350px;
-    flex: 1;
-    padding-left: 0;
-}
-
-footer ol,
-footer ul {
+.container-footer ul {
   margin: 0;
   padding: 0;
   list-style: none;
@@ -420,39 +414,32 @@ footer ul {
   gap: 1rem;
 }
 
-footer li {
+.container-footer li {
     display: grid;
     grid-template-columns: 0 1fr;
-    gap: 1.75em;
-    align-items: start;
+    gap: 2em;
     font-size: 1rem;
     line-height: 1.25;
   }
 
-  footer ul li::before {
+  .container-footer ul li::before {
   content: attr(data-icon);
-  /* Make slightly larger than the li font-size
-  but smaller than the li gap */
   font-size: 1.1em;
   text-shadow: 2px 3px rgb(55, 54, 54);;
 }
 
-footer p{
-    text-align: right;
-    padding-right: 1.5em;
-}
 
 #contact:target{
     border: 1px solid black
 }
 
 .contact-text{
-    resize: none;
     width: 90%;
     height: 20%;
 }
 
 input, textarea, select{
+    resize: none;
     transition-property: box-shadow;
     transition-duration: 0.3s;
 }
@@ -461,28 +448,13 @@ input:focus, textarea:focus, select:focus{
     box-shadow: 0px 1px 10px rgb(68, 148, 238);
 }
 
-.contact-button-container{
-    display:flex;
-    flex: 1;
-    justify-content: right;
-    margin: 0 2em;
-}
-
-.span-input{
-    display: flex;
-}
-
-.span-input:nth-of-type(5){
-    display: block;
-}
-
 .span-input label{
     margin-right: 0.5em;
     margin-bottom: 0.2em;
 }
 
 .span-input label + *{
-    border-radius: 0.5em;
+    border-radius: 0.3em;
 }
 
 /* REDES SOCIAIS FOOTER */
@@ -511,15 +483,8 @@ input:focus, textarea:focus, select:focus{
     background-color: rgb(155, 197, 245);
 }
 
-.containerteste{
-    display: flex;
-}
-
-.containerteste div{
-    width: 200px;
-    height: 200px;
-    border: 1px solid black;
-    background-color: blue;
+.footer-copy{
+    text-align: center;
 }
 
 
@@ -535,9 +500,8 @@ input:focus, textarea:focus, select:focus{
 
     .logo-image{
         position: absolute;
-        height: 300px;
-        width: 500px;
-        top: -7px;
+        height: 200px;
+        width: 200px;
     }
 
     .container-logo-image-2{
@@ -546,6 +510,11 @@ input:focus, textarea:focus, select:focus{
 
     .div-book-image{
         z-index: 1900;
+    }
+
+    h2{
+        padding: 0;
+        text-align: center;
     }
 
     .container-cursos{
@@ -580,5 +549,20 @@ input:focus, textarea:focus, select:focus{
 
     .course-grid{
         grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 1050px){
+    .container-footer{
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 768px){
+    .container-footer{
+        grid-template-columns: 1fr;
+    }
+    .course-grid{
+        grid-template-columns: 1fr ;
     }
 }
