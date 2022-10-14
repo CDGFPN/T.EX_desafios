@@ -123,12 +123,20 @@ body{
 }
 
 h1{
-    padding: 1em;
+    padding: 3em;
     text-align: center;
+    color: #fff;
+    text-shadow: 0 0 15px rgba(255,255,255,.5), 0 0 7px black;
+    font-weight: 700;
+    text-transform: uppercase;
 }
 
-h2{
+h2{ 
+    color: #fff;
+    text-shadow: 0 0 15px rgba(255,255,255,.5), 0 0 7px black;
     padding-left: 2em;
+    font-weight: 700;
+    text-transform: uppercase;
 }
 
 main{
@@ -266,6 +274,7 @@ main{
     gap: 0.5em; 
     list-style: none;
     grid-auto-rows: 1fr;
+    transition: color 0s;
 }
 
 .course-grid > *{
@@ -274,10 +283,7 @@ main{
     background-color: #e1f1ff;
     border-radius: 20px;
     padding: 1.2em 0.8em;
-}
-
-.course-grid li{
-    transition: background-color 0.2s, color 0;
+    transition: background-color 0.2s ease;
 }
 
 .course-grid li:hover{
@@ -286,9 +292,11 @@ main{
 }
 
 .grid-course-title{
-    display:block;
+    display: block;
     text-transform: uppercase;
     margin-bottom: 0.5em;
+    font-size: 1.15em;
+    font-weight: 700;
 }
 
 .grid-course-description{
@@ -305,16 +313,44 @@ main{
 }
 
 .grid-course-modality ul{
+    margin-top: 3em;
     list-style: none;
     padding: 0;
+    margin-bottom: 1em;
+    text-align: left;
+}
+
+.grid-course-modality ul li, .grid-course-modality ul li > *{
+    display: flex;
+    flex: 1;
+    justify-content: space-between;
+    transition: background-color 0.2s ease;
+}
+
+.grid-course-modality ul li a{
     border-bottom: 2px solid #888;
     border-top: 2px solid #888;
-    text-align: left;
+    padding: 3px 0;
+}
+
+.grid-course-modality ul li:nth-child(2) a{
+    border-top: none;
+}
+
+.grid-course-modality ul li:hover{
+    background-color: #fff;
+    color: black;
 }
 
 .grid-course-modality ul li a{
     text-decoration: none;
     color: inherit;
+}
+
+.course-flex-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .container-footer{
