@@ -277,14 +277,11 @@ main{
 }
 
 .course-grid li{
-    transition-property: background-color;
-    transition-duration: 0.2s;
-    background-size: 200% auto;
+    transition: background-color 0.2s, color 0;
 }
 
-.course-grid li:hover, .course-grid li:hover *{
+.course-grid li:hover{
     background: rgba(110,167,233,1);
-    background-position: right center;
     color: #fff;
 }
 
@@ -307,32 +304,18 @@ main{
     margin-top: 1em;
 }
 
-.grid-course-modality{
+.grid-course-modality ul{
     list-style: none;
     padding: 0;
     border-bottom: 2px solid #888;
     border-top: 2px solid #888;
-    color: black;
     text-align: left;
-    transition-property: background-color;
-    transition-duration: 0.2s;
 }
 
-.grid-course-modality li a{
+.grid-course-modality ul li a{
     text-decoration: none;
-    color: black;
+    color: inherit;
 }
-
-.grid-course-modality a:nth-child(2){
-    border-top: none;
-}
-
-.grid-course-modality a{
-    transition: 0.5s;
-    background-size: 200% auto;
-    
-}
-
 
 .container-footer{
     display: flex;
@@ -501,4 +484,3 @@ input:focus, textarea:focus, select:focus{
     color: #fff;
     text-decoration: none;
   }
- 
